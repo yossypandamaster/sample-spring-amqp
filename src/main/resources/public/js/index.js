@@ -20,7 +20,7 @@ function on_connect_error() {
 
 function on_message(msg) {
     var obj = JSON.parse(msg.body);
-    $(".chat").append('<tr><td><small>' + obj.time + '</small>&nbsp;<strong class="primary-font">' + obj.from + '</strong><p>' + obj.message + '</p></td></tr>');
+    $(".chat").append('<tr><td><small>' + obj.time + '</small>&nbsp;<strong class="primary-font">' + obj.to + '</strong>&nbsp;<strong class="primary-font">' + obj.from + '</strong><p>' + obj.message + '</p></td></tr>');
 }
 
 function sendMessage() {
