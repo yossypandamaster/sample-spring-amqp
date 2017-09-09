@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Spring-Security sample</title>
+    </head>
+    <body>
+        <form method="post" th:action="@{/auth}">
+            User name:<input type="text" name="username"/><br/>
+            Password:<input type="password" name="password"/><br/>
+            <button type="submit">Login</button>
+            <div class="text-danger" th:text="${message}"></div>
+        </form>
+    </body>
+</html>

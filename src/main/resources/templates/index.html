@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring-AMQP sample</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="_csrf" th:content="${_csrf.token}"/>
+        <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/stomp.min.js"></script>
+        <script type="text/javascript" src="js/sockjs.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </head>
+    <body>
+        <table style="width: 500px;">
+            <thead>
+                <tr>
+                    <th>Messages</th>
+                </tr>
+            </thead>
+            <tbody class="chat"></tbody>
+        </table>
+        <div style="width: 500px;">
+            <select id="room">
+                <option value="room1" selected="selected">room1</option>
+                <option value="room2">room2</option>
+            </select>
+            <input type="text" id="message-input"/>
+            <button type="button" id="btn-send">Send message</button>
+            <input type="hidden" id="queue" th:value="${queue}"/>
+        </div>
+    </body>
+</html>
